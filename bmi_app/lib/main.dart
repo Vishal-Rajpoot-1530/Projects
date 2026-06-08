@@ -1,29 +1,22 @@
 import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BMIApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BMIApp extends StatelessWidget {
+  const BMIApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'BMI APP',
       theme: ThemeData(
-        
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.green,
       ),
-      home:  ,
+      home: const HomeScreen(),
     );
   }
 }
-
-
-
-
-
- 
- 
