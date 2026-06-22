@@ -1,5 +1,7 @@
 import 'package:bmi_app/widgets/gender_selector.dart';
+import 'package:bmi_app/widgets/height_slider.dart';
 import 'package:flutter/material.dart';
+// import 'package:bmi_app/widgets/nav_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,27 +14,27 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromARGB(255, 66, 72, 193),
         title: Container(
-          height: 180,
+          height: 100,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
+                  backgroundColor: const Color.fromARGB(255, 66, 72, 193),
                   iconColor: Colors.white,
                 ),
-                child: Icon(Icons.menu_open_rounded, size: 35),
+                child: Icon(Icons.menu_open_rounded, size: 25),
               ),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
+                  backgroundColor: const Color.fromARGB(255, 66, 72, 193),
                   iconColor: Colors.white,
                 ),
-                child: Icon(Icons.loop_sharp, size: 35),
+                child: Icon(Icons.loop_sharp, size: 25),
               ),
             ],
           ),
@@ -43,11 +45,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
         children: [
           Container(
-            height: 180,
+            height: 100,
             width: double.infinity,
-            decoration: BoxDecoration(color: Colors.green),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 66, 72, 193),
+            ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
@@ -61,15 +65,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 10),
                 Text(
                   "Calculate your Body Mass Index",
-                  style: TextStyle(letterSpacing: 3),
+                  style: TextStyle(letterSpacing: 3, color: Colors.white),
                 ),
-                SizedBox(height: 80),
+                // SizedBox(height: 80),
               ],
             ),
           ),
 
           Transform.translate(
-            offset: Offset(0, -110),
+            offset: Offset(0, -30),
             child: Container(
               padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
               margin: EdgeInsets.all(15),
@@ -90,25 +94,16 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 10),
+                  // SizedBox(height: 10),
                   Text("GENDER", style: TextStyle(color: Colors.black)),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   // gender card selector
                   GenderSelector(),
                   SizedBox(height: 20),
                   // height section
-                  Column(
-                    children: [
-                      Text("HEIGHT", style: TextStyle(color: Colors.black)),
-                      SizedBox(height: 10),
+                  HeightSlider(),
 
-                      /// value of the height appears on the screen when change the bar value
-                      Text("Value", style: TextStyle(color: Colors.black)),
-
-                      // select height bar for the height
-                    ],
-                  ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 17),
 
                   // weight section
                   Row(
@@ -133,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: TextStyle(color: Colors.black),
                                 ),
                               ),
-                              SizedBox(width: 10),
+                              SizedBox(width: 15),
                               ElevatedButton(
                                 onPressed: () {},
                                 child: Text(
@@ -145,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: 15),
                       Column(
                         children: [
                           Text("AGE", style: TextStyle(color: Colors.black)),
@@ -165,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: TextStyle(color: Colors.black),
                                 ),
                               ),
-                              SizedBox(width: 10),
+                              SizedBox(width: 15),
                               ElevatedButton(
                                 onPressed: () {},
                                 child: Text(
@@ -180,13 +175,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 40),
                   ElevatedButton(
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 66, 72, 193),
+                      foregroundColor: Colors.white,
+                    ),
                     child: Text("     CALCULATE BMI    "),
                   ),
 
-                  SizedBox(height: 15),
+                  SizedBox(height: 10),
                 ],
               ),
             ),

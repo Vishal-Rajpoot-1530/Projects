@@ -1,5 +1,6 @@
+import 'package:bmi_app/widgets/nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+// import 'screens/home_screen.dart';
 
 void main() {
   runApp(const BMIApp());
@@ -13,10 +14,8 @@ class BMIApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'BMI APP',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const HomeScreen(),
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: const NavBar(),
     );
   }
 }

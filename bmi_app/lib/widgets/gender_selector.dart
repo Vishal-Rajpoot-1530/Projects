@@ -26,24 +26,24 @@ class _GenderSelectorState extends State<GenderSelector> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 250),
           curve: Curves.easeInOut,
-          width: 90,
-          height: 90,
+          width: 80,
+          height: 80,
           decoration: BoxDecoration(
             color: isSelected
-                ? const Color.fromARGB(255, 77, 253, 80).withOpacity(0.15)
-                : Colors.grey.shade200,
+                ? const Color.fromARGB(255, 66, 72, 193)
+                : Colors.white,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
               color: isSelected
-                  ? const Color.fromARGB(255, 73, 249, 106)
+                  ? const Color.fromARGB(255, 66, 72, 193).withOpacity(0.25)
                   : Colors.transparent,
               width: 2,
             ),
             boxShadow: [
               BoxShadow(
                 color: isSelected
-                    ? const Color.fromARGB(255, 95, 240, 103).withOpacity(0.25)
-                    : Colors.black.withOpacity(0.05),
+                    ? const Color.fromARGB(255, 66, 72, 193).withOpacity(0.25)
+                    : Colors.black.withOpacity(0.08),
                 blurRadius: isSelected ? 15 : 5,
                 spreadRadius: isSelected ? 2 : 0,
                 offset: const Offset(0, 5),
@@ -59,21 +59,17 @@ class _GenderSelectorState extends State<GenderSelector> {
                 curve: Curves.elasticOut,
                 child: Icon(
                   icon,
-                  size: 30,
-                  color: isSelected
-                      ? const Color.fromARGB(255, 100, 233, 88)
-                      : Colors.black54,
+                  size: 20,
+                  color: isSelected ? Colors.white : Colors.black54,
                 ),
               ),
               const SizedBox(height: 12),
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 12,
                   fontWeight: FontWeight.bold,
-                  color: isSelected
-                      ? const Color.fromARGB(255, 86, 232, 98)
-                      : Colors.black87,
+                  color: isSelected ? Colors.white : Colors.black87,
                 ),
               ),
             ],
