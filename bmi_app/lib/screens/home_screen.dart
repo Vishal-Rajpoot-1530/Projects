@@ -10,6 +10,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final weightContriller = TextEditingController();
+  final ageController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
 
@@ -114,59 +118,73 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text("WEIGHT", style: TextStyle(color: Colors.black)),
                           SizedBox(height: 10),
                           //weight value
-                          Text(
-                            "value kg",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                          SizedBox(height: 10),
                           Row(
                             children: [
-                              ElevatedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "-",
-                                  style: TextStyle(color: Colors.black),
+                              SizedBox(
+                                width: 60,
+                                height: 50,
+                                child: TextField(
+                                  controller: weightContriller,
+                                  keyboardType: TextInputType.number,
+                                  style: const TextStyle(
+                                    color: const Color.fromARGB(
+                                      255,
+                                      66,
+                                      72,
+                                      193,
+                                    ),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight(
+                                      800,
+                                    ), // Change font size here
+                                  ),
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                  ),
                                 ),
                               ),
-                              SizedBox(width: 15),
-                              ElevatedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "+",
-                                  style: TextStyle(color: Colors.black),
-                                ),
+                              Text(
+                                " kg",
+                                style: TextStyle(color: Colors.black),
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(width: 15),
+                      SizedBox(width: 65),
                       Column(
                         children: [
                           Text("AGE", style: TextStyle(color: Colors.black)),
                           SizedBox(height: 10),
                           //weight value
-                          Text(
-                            "value yrs",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                          SizedBox(height: 10),
                           Row(
                             children: [
-                              ElevatedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "-",
-                                  style: TextStyle(color: Colors.black),
+                              SizedBox(
+                                width: 60,
+                                height: 50,
+                                child: TextField(
+                                  controller: ageController,
+                                  keyboardType: TextInputType.number,
+                                  style: const TextStyle(
+                                    color: const Color.fromARGB(
+                                      255,
+                                      66,
+                                      72,
+                                      193,
+                                    ),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight(
+                                      800,
+                                    ), // Change font size here
+                                  ),
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                  ),
                                 ),
                               ),
-                              SizedBox(width: 15),
-                              ElevatedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "+",
-                                  style: TextStyle(color: Colors.black),
-                                ),
+                              Text(
+                                " yrs",
+                                style: TextStyle(color: Colors.black),
                               ),
                             ],
                           ),

@@ -33,8 +33,11 @@ class _HeightSliderState extends State<HeightSlider> {
             width: 260,
             child: Slider(
               value: height,
+              activeColor: const Color.fromARGB(255, 66, 72, 193),
+              thumbColor: const Color.fromARGB(255, 66, 72, 193),
               min: 100,
               max: 220,
+
               onChanged: (value) {
                 setState(() {
                   height = value;

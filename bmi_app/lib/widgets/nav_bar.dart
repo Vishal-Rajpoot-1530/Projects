@@ -1,4 +1,5 @@
 import 'package:bmi_app/screens/home_screen.dart';
+import 'package:bmi_app/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
@@ -13,7 +14,7 @@ class _NavBarState extends State<NavBar> {
 
   final List<Widget> pages = [
     const HomeScreen(),
-    const Center(child: Text("History")),
+    const ResultScreen(),
     const Center(child: Text("About")),
   ];
 
