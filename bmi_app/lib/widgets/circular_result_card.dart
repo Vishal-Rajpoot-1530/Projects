@@ -13,18 +13,35 @@ class CircularResultCard extends StatelessWidget {
     required this.color,
   });
 
+  String bmiMessage(String status) {
+    switch (status) {
+      case "Normal":
+        return "Great! You have a normal body weight. ";
+      case "UnderWeight":
+        return "You are currently underweight.";
+
+      case "OverWeight":
+        return "You are slightly above the recommended weight range.";
+      case "Obese":
+        return "Your BMI falls within the obese range.";
+      default:
+        return "Unable to determine your BMI category.   ";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 10),
         Text(
           "Your BMI",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: 20),
         SizedBox(
           width: 270,
-          height: 270,
+          height: 220,
           child: CustomPaint(
             painter: BMIPainter(bmi: bmi, color: color),
             child: Center(
@@ -54,6 +71,23 @@ class CircularResultCard extends StatelessWidget {
             ),
           ),
         ),
+        Container(
+          padding: EdgeInsets.all(8),
+          child: Column(
+            children: [
+              Text(
+                (bmiMessage(
+                  status,
+                )).substring(0, (bmiMessage(status)).indexOf('.') + 1),
+                style: TextStyle(
+                  color: color,
+                  fontSize: 18,
+                  fontWeight: FontWeight(700),
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -72,7 +106,7 @@ class BMIPainter extends CustomPainter {
     final radius = size.width / 2 - strokeWidth;
 
     final backgroundPaint = Paint()
-      ..color = const Color.fromARGB(255, 208, 243, 209)
+      ..color = color.withOpacity(0.3)
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeWidth = strokeWidth;

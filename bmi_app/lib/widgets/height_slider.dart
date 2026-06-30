@@ -4,11 +4,11 @@ class HeightSlider extends StatefulWidget {
   const HeightSlider({super.key});
 
   @override
-  State<HeightSlider> createState() => _HeightSliderState();
+  State<HeightSlider> createState() => HeightSliderState();
 }
 
-class _HeightSliderState extends State<HeightSlider> {
-  double height = 170;
+class HeightSliderState extends State<HeightSlider> {
+  static double height = 170;
 
   @override
   Widget build(BuildContext context) {

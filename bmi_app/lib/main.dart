@@ -1,6 +1,5 @@
-import 'package:bmi_app/widgets/nav_bar.dart';
+import 'package:bmi_app/routs/go_router.dart';
 import 'package:flutter/material.dart';
-// import 'screens/home_screen.dart';
 
 void main() {
   runApp(const BMIApp());
@@ -11,11 +10,12 @@ class BMIApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'BMI APP',
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const NavBar(),
+      // home: const NavBar(),
+      routerConfig: appRouter,
     );
   }
 }
